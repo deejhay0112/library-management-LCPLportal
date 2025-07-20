@@ -1,0 +1,504 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1f293a; /* Updated background color */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: #1f293a; /* Match header to new background */
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.header__toggle {
+    margin-right: 20px;
+}
+
+.header__toggle i {
+    font-size: 24px;
+    color: #ffff;
+}
+.box-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.filter-container {
+    display: flex;
+    gap: 10px; /* Adds space between the input and buttons */
+    align-items: center;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}
+
+.table-wrapper {
+    max-height: 555px;
+    overflow-y: auto;
+    overflow-x: auto;
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Ensures that the input and buttons are on the left, and scroll buttons are on the right */
+    align-items: center; /* Vertically align items */
+    padding: 10px;
+    background-color:#1f293a; /* Match the background */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+/* Make sure the header row matches the new compact style */
+table thead {
+    padding: 6px 10px; /* Match padding in header */
+    background-color: #0069d9;
+    color: white;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+table th, table td {
+    padding: 4px 8px; /* Reduce padding for a more compact appearance */
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+    font-weight: bold;
+}
+table tr {
+    min-height: 30px; /* Reduce the minimum height for table rows */
+    transition: background-color 0.2s ease;
+}
+table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+table tr:hover {
+    background-color: #e6f2ff;
+    color: #0056b3;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button {
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    margin: 5px;
+}
+
+.button.Add-Book-Button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: auto;
+}
+
+.button.Add-Book-Button:hover {
+    background-color: #ffffff;
+    color: #007bff;
+    border: 2px solid #007bff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    z-index: 1001;
+}
+
+.modal-header .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+}
+
+.modal-header .close:hover,
+.modal-header .close:focus {
+    color: #ff0000;
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+}
+
+.modal-header .close:active {
+    color: #cc0000;
+    background-color: #ccc;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.modal-footer {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    text-align: right;
+}
+
+.search-container-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.search-icon-button, .button {
+    padding: 10px 20px; /* Adjust button size */
+    font-size: 14px; /* Smaller font size for the button text */
+    background-color: #007bff; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 4px; /* Slightly rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.search-icon-button:hover, .button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+.searchiInput {
+    width: 200px; /* Reduced input width */
+    padding: 10px; /* Adjusted padding */
+    font-size: 14px; /* Adjusted font size */
+    border-radius: 4px 0 0 4px;
+    border: 1px solid #ccc;
+}
+
+
+.search-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.search-container .button {
+    padding: 12px 24px;
+    margin-left: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-container .button:hover {
+    background-color: #0056b3;
+}
+
+.search-container .button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.button.Add-Book-Button.edit-button {
+    margin-left: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button.Add-Book-Button:hover {
+    background-color: #ffffff;
+    color: #007bff;
+    border: 2px solid #007bff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* General Button Styling */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #007bff; /* Default blue */
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+/* Hover for General Button */
+.button:hover {
+    background-color: #ffffff;
+    color: inherit;
+    border: 2px solid currentColor;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Edit Button Styling */
+.button.edit-button {
+    background-color: #28a745;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button.edit-button:hover {
+    background-color: #ffffff;
+    color: #28a745; /* Green text on hover */
+    border: 2px solid #28a745;
+}
+
+/* Delete Button Styling */
+.button.delete-button {
+    background-color: #dc3545;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button.delete-button:hover {
+    background-color: #ffffff;
+    color: #dc3545; /* Red text on hover */
+    border: 2px solid #dc3545;
+}
+
+/* Focus Styling for Accessibility */
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+
+
+#searchInput {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#searchInput:focus {
+    border-color: #007bff;
+}
+
+button[type="submit"] {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Scroll container holding both buttons side by side */
+/* Scroll container holding both buttons side by side */
+.scroll-container {
+    display: flex;
+    justify-content: space-between; /* Align buttons horizontally */
+    gap: 20px; /* Space between up and down buttons */
+}
+
+/* Common styles for both scroll buttons */
+.scroll-button {
+    background-color: #007bff; /* Bright blue background */
+    color: white; /* White icon */
+    border: none;
+    border-radius: 50%; /* Make the button circular */
+    width: 50px; /* Adjust the size of the button */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.scroll-button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #007bff; /* Change the icon color to blue */
+    border: 2px solid #007bff; /* Add a blue border on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Add shadow effect */
+}
+
+
+.search-icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px; /* Same padding as other buttons */
+    font-size: 16px; /* Matching font size */
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin: 10px 0;
+}
+
+.search-icon-button:hover {
+    background-color: #ffffff;
+    color: #007bff;
+    border: 2px solid #007bff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.search-icon-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+

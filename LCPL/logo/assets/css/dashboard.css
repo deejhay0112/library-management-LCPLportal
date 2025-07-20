@@ -1,0 +1,638 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1f293a; /* Updated background color */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main {
+    background-color: #1f293a; /* If you have a main container, apply here too */
+}
+
+.card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chart-container {
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    padding: 15px;
+    flex: 1;
+    margin-top: 10px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 300px !important;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+
+.charts-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    border: 1px solid #1f293a;
+    border-radius: 8px;
+    background-color:#1f293a;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .charts-container {
+        flex-direction: row;
+    }
+}
+
+.visitor-chart-container {
+   
+    border-radius: 20px;
+    background-color: #1f293a;
+    padding: 20px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.chart-section {
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.gender-chart-section {
+    flex: 0 0 auto;
+    margin-right: 0;
+    padding: 15px;
+
+}
+
+.education-chart-section {
+    padding: 15px;
+
+}
+
+.c-dashboardInfo {
+    margin-bottom: 15px;
+    flex: 1;
+    max-width: 300px;
+    width: 100%;
+
+    padding: 15px;
+    border-radius: 20px;
+    transition: transform 0.2s;
+}
+
+.c-dashboardInfo:hover {
+    transform: translateY(-5px);
+}
+
+.c-dashboardInfo .wrap {
+    background: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.c-dashboardInfo__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.c-dashboardInfo__count {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 40px;
+    color: #333;
+}
+
+.c-dashboardInfo .wrap:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    content: "";
+}
+
+.c-dashboardInfo:nth-child(1) .wrap:after {
+    background: linear-gradient(82.59deg, #00c48c 0%, #00a173 100%);
+}
+
+.c-dashboardInfo:nth-child(2) .wrap:after {
+    background: linear-gradient(81.67deg, #0084f4 0%, #1a4da2 100%);
+}
+
+.date-selection {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.date-selection label {
+    font-size: 0.85em;
+}
+
+.date-selection input {
+    font-size: 0.85em;
+    padding: 5px;
+}
+
+.date-selection button {
+    font-size: 0.85em;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.date-selection button:hover {
+    background-color: white;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.input-group input[type="date"],
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.input-group input[type="date"]:focus,
+.input-group select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.input-group button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.input-group button:hover {
+    background-color:white;
+    transform: translateY(-2px);
+}
+
+#chart-year, #chart-date {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+}
+
+#chart-year:focus, #chart-date:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.button {
+    width: auto;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.button i {
+    font-size: 25px;
+}
+
+.button:hover {
+    background-color: #ffffff;
+    color: #007bff;
+    border-color: #007bff;
+    transform: translateY(-2px);
+   
+}
+
+.button:hover i {
+    color: #007bff;
+}
+
+.button:focus {
+    outline: none;
+   
+}
+.header__date-picker {
+    display: flex;
+    align-items: center; /* Vertically align the date picker */
+    margin-right: 10px; /* Adjust margin for right spacing */
+    height: 100%; /* Make the date picker container take full height of the header */
+}
+#header-date-picker {
+    padding: 5px; /* Adjust padding to make it smaller */
+    margin: 0; /* Remove any margin */
+    height: 30px; /* Set a specific height for the date picker */
+    font-size: 14px; /* Adjust font size */
+    border-radius: 4px; /* Make the corners rounded */
+    border: 1px solid #ccc; /* Light border */
+}
+
+.header__date-picker input {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Button Style */
+.open-modal-btn {
+    background-color: #008cba;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.open-modal-btn:hover {
+    background-color: #005f73;
+}
+
+/* Table Style */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+
+.header {
+    background-color: #1f293a; /* Match header to new background */
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    display: flex;
+    align-items: center;
+}
+
+.header__toggle i {
+    color: #ffffff; /* Ensure the toggle icon is also white */ /* Adjust icon size */
+}
+
+.side-by-side-charts {
+    display: flex;               /* Flexbox to align charts side by side */
+    gap: 20px;                   /* Space between the charts */
+    justify-content: space-between; /* Spread them across the available width */
+}
+
+
+
+.pred-visitor-chart-section {
+    width: 95%;             /* 90% of the original width */
+    height: 95%;            /* 90% of the original height */
+    max-width: 1255px;      /* 90% of 1384px */
+    max-height: 700px;      /* 90% of 695px */
+    margin: 0 auto;         /* Center horizontally */
+    padding: 0;             /* Remove padding */
+}
+
+.pred-chart-container {
+    width: 100%;            /* Take full width of the container */
+    height: 100%;           /* Take full height of the container */
+    margin: 0;              /* Remove margin */
+    padding: 0;             /* Remove padding */
+    background-color: white; /* Optional: Keep a white background */
+}
+
+#forecastVisitorChart {
+    width: 100% !important;  /* Make the canvas fill the width of the container */
+    height: 100% !important; /* Make the canvas fill the height of the container */
+}
+
+.combined-container {
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+
+/* Make specific headings and labels white, bold, and use monospace font */
+.side-by-side-charts label[for="chart-year"],
+.side-by-side-charts h3,
+.pred-visitor-chart-section h3 {
+    color: #ffffff; /* Set the color to white */
+    font-family: monospace; /* Set font to monospace */
+    font-weight: bold; /* Make the font bold */
+    font-size: 30px;
+}
+.month-visitor-chart-section {
+    
+    padding: 20px; /* Add padding for spacing */
+    border-radius: 10px; /* Rounded corners */
+    margin-top: 20px; /* Spacing at the top */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+/* Styling for the Heading (h3) inside Month Visitor Chart Section */
+.month-visitor-chart-section h3 {
+    color: #ffffff; /* White text */
+    font-family: monospace; /* Monospace font */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space between heading and chart */
+}
+
+/* Styling for the Chart Container */
+.month-visitor-chart-section .chart-container {
+    width: 100%; /* Full width of the container */
+    max-width: 1000px; /* Maximum width for larger screens */
+    margin: 0 auto; /* Center the chart container */
+    height: 500px; /* Fixed height for the chart */
+}
+
+/* Ensure the canvas takes the full space */
+.month-visitor-chart-section canvas {
+    width: 100% !important; /* Ensure full width for responsiveness */
+    height: 100% !important; /* Full height for responsiveness */
+}
+
+/* Wrapper for the entire forecast section */
+.forecast-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: #1f293a;
+}
+
+/* Container for forecast cards and navigation buttons */
+.forecast-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    overflow: hidden;
+}
+
+/* Styling for previous and next buttons */
+#prev-button, #next-button {
+    background-color: #4a90e2;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#prev-button:hover, #next-button:hover {
+    background-color: #357abd;
+}
+
+/* Forecast cards wrapper */
+#forecast-cards {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+}
+
+/* Individual forecast card styling */
+.forecast-card {
+    width: 120px;
+    min-height: 160px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.forecast-card:hover {
+    transform: translateY(-5px); /* Hover lift effect */
+}
+
+/* Inner content for forecast cards */
+.forecast-card .wrap {
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Date styling in forecast card */
+.forecast-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333333;
+    margin: 10px 0;
+}
+
+/* Visitor count styling in forecast card */
+.forecast-count {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+/* Accent line on top of each card */
+.forecast-card .wrap:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    content: "";
+    background: linear-gradient(82.59deg, #00c48c 0%, #00a173 100%);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+/* General Button Styles */
+.button {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Button Styles */
+.button {
+    width: 40px; /* Fixed width for round buttons */
+    height: 40px; /* Fixed height for round buttons */
+    background-color: #007bff;
+    border: none;
+    border-radius: 50%; /* Makes the button circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    color: #ffffff; /* Icon color */
+}
+
+/* Icon Styling for Button */
+.button i {
+    font-size: 18px; /* Icon size */
+}
+
+/* Hover Effect for Button */
+.button:hover {
+    background-color:white; /* Darker blue background on hover */
+    transform: scale(1.05); /* Slightly scales up the button on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Focus Effect for Accessibility */
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+

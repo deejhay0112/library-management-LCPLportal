@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #e0f2ff; /* Light blue background */
+}
+
+.divider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Ensures full height for the wave effect */
+    z-index: -1;
+    background: #e0f2ff; /* Base background color */
+}
+
+/* Create wave effect using ::before */
+.divider::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    top: 40%; /* Adjust vertical positioning of the wave */
+    background: #f0f0f0; /* Light grey for wave */
+    border-radius: 100% / 15%; /* Creates the wave effect */
+    box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    animation: gradient 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+/* Main container */
+/* Main container */
+main {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    transform: scale(0.9); /* Scales down the entire form */
+}
+/* Box Container */
+.box-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px; /* Minimized padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+    /* Button Styles */
+    .button {
+        display: inline-block;
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #ffffff;
+        background-color: #007bff; /* Blue background */
+        border: none;
+        border-radius: 6px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+    /* Hover Effect for Buttons */
+    .button:hover {
+        background-color: #ffffff; /* White background on hover */
+        color: #007bff; /* Blue text on hover */
+        border: 2px solid #007bff; /* Blue border on hover */
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Optional: Focus Styles for Accessibility */
+    .button:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Blue outline for focus */
+    }
+
+    .button-wrapper {
+        text-align: right; /* Aligns the button to the right */
+        margin-top: 20px; /* Space above the button */
+    }
+
+
+/* Form Container */
+.form-container {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Reduced gap between elements */
+}
+
+form input, form select {
+    padding: 6px; /* Reduced padding for compact form */
+    font-size: 0.85rem; /* Smaller font size */
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+form button {
+    font-size: 0.85rem;
+    padding: 8px; /* Reduced button padding */
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    form button:hover {
+        background-color: #0056b3;
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1000; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        align-items: center; /* Center content vertically */
+        justify-content: center; /* Center content horizontally */
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto; /* Centered horizontally */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+        max-width: 600px;
+        border-radius: 8px;
+        position: relative;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    h2 {
+        color: #007bff;
+        margin-bottom: 20px;
+    }
+
+    .modal-header h2 {
+        margin: 0;
+        font-size: 24px;
+        color: #333;
+    }
+
+    .close {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        transform: scale(1.1);
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-group input, .form-group select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+    }
+
+    .form-group button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-right: 10px; /* Space between buttons */
+    }
+
+    .form-group button:hover {
+        background-color: #0056b3;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .modal-content {
+            width: 100%; /* Adjust width for smaller screens */
+        }
+
+        .form-group button {
+            margin-right: 0; /* Remove margin on smaller screens */
+            display: block;
+            width: 100%; /* Full width for buttons */
+            margin-bottom: 10px; /* Space between buttons */
+        }
+    }
+    .search-results {
+border: 1px solid #ced4da;
+border-radius: 4px;
+max-height: 150px; /* Limit the height */
+overflow-y: auto; /* Enable scrolling if needed */
+background-color: #fff;
+position: absolute; /* Position it below the input */
+width: calc(100% - 2px); /* Match the width of the input */
+z-index: 1000; /* Ensure it's on top */
+}
+
+.search-results div {
+padding: 10px;
+cursor: pointer; /* Show pointer cursor */
+}
+
+.search-results div:hover {
+background-color: #f0f0f0; /* Highlight on hover */
+}
+/* Input Field Styles */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+font-family: "SF Pro", sans-serif;
+max-width: 100%; /* Full width */
+padding: 12px; /* Padding for better spacing */
+font-size: 1rem; /* Font size */
+border: 1.5px solid #ced4da; /* Border color */
+border-radius: 0.5rem; /* Rounded corners */
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+transition: border-color 0.25s ease, box-shadow 0.25s ease; /* Transition effects */
+outline: none; /* Remove default outline */
+}
+
+/* Focus Styles */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
+border-color: #007bff; /* Border color on focus */
+box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Box shadow on focus */
+}
+
+/* Placeholder Styles */
+input::placeholder,
+textarea::placeholder {
+color: #999; /* Placeholder text color */
+opacity: 1; /* Ensure the opacity is 1 for better visibility */
+}
+
+/* Header Container Styling */
+.header-container {
+    text-align: center;
+    margin-bottom: 10px;
+}
+/* Logo Styling */
+.logo-image {
+    width: 45px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 10px; /* Space between logo and title */
+}
+.header-container .logo-image {
+    width: 70px;
+    height: auto;
+    margin-bottom: 10px;
+}
+/* Title Styling */
+.header-container h2 {
+    color: #007bff;
+    font-size: 1.4em;
+    margin: 0;
+}
+
+
+.radio-group {
+    font-size: 0.8rem; /* Smaller font for compact look */
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Compact layout */
+}
+/* Adjust scaling on smaller screens */
+@media (max-width: 480px) {
+    main {
+        transform: scale(0.8); /* Further scaling down for very small screens */
+    }
+}

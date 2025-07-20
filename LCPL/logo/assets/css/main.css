@@ -1,0 +1,318 @@
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+.navbar {
+    border-bottom: 2px solid #007bff;
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #1f293a; 
+    color: #fff;
+    padding: 150px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: -1;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section p {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* General Button Styling */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #007bff; /* Default blue */
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+/* Hover Effect */
+.button:hover {
+    background-color: #ffffff; /* Change to white */
+    color: #007bff; /* Blue text */
+    border: 2px solid #007bff; /* Blue border */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+}
+
+/* Focus Effect */
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Outline Secondary Button */
+.btn-outline-secondary {
+    color: #007bff;
+    border: 2px solid #007bff;
+    background-color: transparent;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #007bff;
+    color: #fff;
+    transform: translateY(-2px);
+}
+/* Footer */
+footer {
+    background-color: #212529;
+    color: #adb5bd;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+
+    .btn-primary, .btn-outline-secondary {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+/* Hero Section Background */
+#hero-section {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    transition: background-image 1s ease-in-out;
+}
+
+/* Transparent Overlay */
+#hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust transparency */
+    z-index: 1;
+}
+
+/* White transparent box around content with blur */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white box */
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+    color: black;
+    backdrop-filter: blur(10px); /* Add blur effect here */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+}
+
+/* Adjust text color inside the box */
+.hero-content h1,
+.hero-content p {
+    color: black; /* Dark text for contrast against white background */
+}
+    /* Hero Section Background */
+    #hero-section {
+        position: relative;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        transition: background-image 1s ease-in-out;
+    }
+    
+    /* Transparent Overlay */
+    #hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.2); /* Adjust transparency */
+        z-index: 1;
+    }
+
+    /* White transparent box around content */
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white box */
+        padding: 40px; /* Increased padding for a larger box */
+        border-radius: 10px;
+        max-width: 800px; /* Increased max-width for a larger box */
+        width: 100%;
+        color: black; /* Set text color to black for contrast */
+    }
+
+    /* Adjust text color inside the box */
+    .hero-content h1,
+    .hero-content p {
+        color: black; /* Dark text for contrast against white background */
+    }
+    /* Apply the Poppins font to the body and hero content */
+body {
+font-family: 'Poppins', sans-serif;
+color: #333;
+background-color: #f4f4f4;
+line-height: 1.6;
+}
+
+/* Hero Section Text Styling */
+.hero-content h1 {
+font-size: 3.5rem; /* Adjusted size */
+font-weight: 600; /* Bolder font for title */
+margin-bottom: 20px;
+color: #333; /* Darker color for contrast */
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.hero-content p {
+font-size: 1.4rem; /* Slightly larger paragraph text */
+font-weight: 300; /* Light font for contrast with the title */
+margin-bottom: 40px;
+color: #555; /* Dark gray for a softer look */
+}
+
+/* General Button Styling */
+.button {
+display: inline-block;
+padding: 12px 24px;
+font-size: 1.2rem;
+font-weight: 500;
+color: #ffffff;
+border-radius: 6px;
+text-align: center;
+text-decoration: none;
+transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+cursor: pointer;
+margin: 10px 0;
+}
+
+/* Primary Button */
+/* Primary Button */
+.btn-primary.button {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #ffffff; /* Initial text color */
+}
+
+.btn-primary.button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #007bff; /* Text color changes to #007bff */
+    border: 2px solid #007bff; /* Add a border for consistency */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+}
+
+/* Outline Secondary Button */
+.btn-outline-secondary.button {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #ffffff; /* Initial text color */
+}
+
+.btn-outline-secondary.button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #007bff; /* Text color changes to #007bff */
+    border: 2px solid #007bff; /* Add a border for consistency */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+}
+
+
+/* Hover Effect for all Buttons */
+.button:hover {
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Focus Effect for Accessibility */
+.button:focus {
+outline: none;
+box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}

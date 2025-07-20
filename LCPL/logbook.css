@@ -1,0 +1,134 @@
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #020202;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .box-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .table-container {
+            max-height: 400px;
+            overflow-y: auto;
+            overflow-x: auto;
+        }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+table thead {
+    background-color: #0069d9;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+}
+
+table th, table td {
+    padding: 1.2em;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+}
+
+        /* Set a fixed width for checkbox columns */
+        table td.checkbox-column {
+            width: 50px; /* Adjust the width as necessary */
+            text-align: center; /* Ensure checkboxes are centered */
+        }
+
+        table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+
+table tr:hover {
+    background-color: #ffffff;
+    color: #0056b3;
+    font-weight: bold;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+        /* Button Styles */
+        .button {
+            display: inline-block;
+            padding: 5px 10px;
+            font-size: 25px;
+            font-weight: 600;
+            color: #007bff;
+            background-color: white;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .button.Add-Book-Button:hover {
+            background-color: #ffffff;
+            color: #007bff;
+            border: 2px solid #007bff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Add container around the whole content */
+        main {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .section {
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+}
+    </style>

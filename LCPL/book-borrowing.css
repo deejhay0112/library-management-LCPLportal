@@ -1,0 +1,65 @@
+
+        .back-button {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        #borrowFormContainer {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            margin-top: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        #borrowFormContainer form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #borrowFormContainer label {
+            margin-bottom: 5px;
+        }
+
+        #borrowFormContainer input, #borrowFormContainer button {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #borrowFormContainer button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #borrowFormContainer button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #borrowFormContainer button[type="button"] {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #borrowFormContainer button[type="button"]:hover {
+            background-color: #5a6268;
+        }

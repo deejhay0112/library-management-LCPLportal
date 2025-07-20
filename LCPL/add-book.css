@@ -1,0 +1,99 @@
+
+
+/* Global Styles */
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: #f4f7f6;
+margin: 0;
+padding: 0;
+}
+
+/* Header Styles */
+header {
+background-color: #007BFF;
+color: white;
+padding: 1em 2em;
+text-align: center;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border-bottom: 3px solid #0056b3;
+}
+
+header h1 {
+margin: 0;
+font-size: 2.5em;
+font-weight: 700;
+}
+
+nav {
+margin-top: 1em;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+padding: 0.6em 1.2em;
+margin: 0 0.5em;
+border-radius: 5px;
+font-size: 1.1em;
+font-weight: 500;
+background-color: #0056b3;
+transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+nav a:hover {
+background-color: #ffffff;
+color: #0056b3;
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Form Styles */
+section {
+padding: 2.5em;
+max-width: 800px;
+margin: auto;
+background-color: white;
+border-radius: 8px;
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+form {
+display: flex;
+flex-direction: column;
+}
+
+.form-group {
+margin-bottom: 1em;
+}
+
+label {
+display: block;
+margin-bottom: 5px;
+font-weight: bold;
+color: #333;
+}
+
+input[type="text"], 
+input[type="number"] {
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 4px;
+width: 100%;
+box-sizing: border-box;
+}
+
+input[type="submit"] {
+padding: 10px;
+border: none;
+border-radius: 4px;
+background-color: #007BFF;
+color: #fff;
+cursor: pointer;
+font-size: 16px;
+font-weight: bold;
+transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+background-color: #0056b3;
+}

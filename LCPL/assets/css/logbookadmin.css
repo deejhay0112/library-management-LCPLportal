@@ -1,0 +1,427 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1f293a; /* Updated background color */
+    color: #ffffff; /* Ensure text is readable on dark background */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f293a;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.table-container {
+    max-height: 1000px; /* Set the maximum height for the container */
+    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal scrolling */ /* IE and Edge */
+    scrollbar-width: thin;  /* Firefox */
+    position: relative;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    table-layout: fixed; /* Ensures table columns take up equal width */
+    border-collapse: collapse;
+    background-color: #ffffff; /* Table background color */
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    color: #1f293a; /* Table text color */
+}
+
+.table-wrapper {
+    max-height: 600px;  /* Adjust this value as needed */
+    overflow-y: auto;   /* Enable vertical scrolling */
+    overflow-x: auto; /* Hide horizontal scrolling if not needed */
+
+}
+
+table thead {
+    background-color: #0069d9; /* Header background color */
+    color: white; /* Header text color */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+}
+
+/* Apply hover effect to the entire thead row */
+table thead:hover th {
+    color: #0069d9; /* Change all header text to blue when hovering over the header row */
+    cursor: pointer;
+}
+
+table thead th {
+    color: #ffffff; /* Default header text color */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+table th, table td {
+    padding: 1em 1.5em; /* Adjust padding for space */
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+    white-space: nowrap; /* Prevent content from wrapping */
+    font-weight: bold;
+    color: #1f293a; /* Text color for table cells */
+}
+
+/* Set specific column widths */
+table th:nth-child(1),
+table td:nth-child(1) {
+    width: 70PX; /* ID No */
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+    width: 75PX; /* School */
+}
+
+table th:nth-child(3),
+table td:nth-child(3) {
+    width: 10%; /* Date */
+}
+
+table th:nth-child(4),
+table td:nth-child(4) {
+    width: 5%; /* Age */
+}
+
+table th:nth-child(5),
+table td:nth-child(5) {
+    width: 10%; /* Sex */
+}
+
+table th:nth-child(6),
+table td:nth-child(6) {
+    width: 10%; /* Time */
+}
+
+table th:nth-child(7),
+table td:nth-child(7) {
+    width: 10%; /* Elementary */
+}
+
+table th:nth-child(8),
+table td:nth-child(8) {
+    width: 10%; /* Junior Highschool */
+}
+
+table th:nth-child(9),
+table td:nth-child(9) {
+    width: 10%; /* Senior Highschool */
+}
+
+table tr:nth-child(even) {
+    background-color: #f8f9fa; /* Alternate row color */
+}
+
+table tr:hover {
+    background-color: #ffffff;
+    color: #0056b3;
+    font-weight: bold;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+/* Button Styles */
+.button {
+    display: inline-block;
+    padding: 10px 20px; /* Increased button padding */
+    font-size: 16px;
+    font-weight: 600;
+    color: #007bff;
+    background-color: white;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.button.Add-Book-Button:hover {
+    background-color: #ffffff;
+    color: #007bff;
+    border: 2px solid #007bff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1000px) {
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Add container around the whole content */
+main {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+    background-color:#1e293b; /* Ensure main section matches body background */
+}
+
+.section {
+    width: 100%;
+}
+
+@media print {
+    /* Force the page into landscape orientation */
+    @page {
+        size: landscape;
+        margin: 10mm;
+    }
+
+    /* Ensure the table takes full width */
+    table {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        font-size: 16px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Set specific column widths for better control in print */
+    table th, table td {
+        padding: 8px;
+        border: 1px solid #dee2e6;
+        text-align: left;
+        color: white; /* Ensure legibility when printed */
+    }
+
+    table th:nth-child(1), table td:nth-child(1) {
+        width: 5%; /* ID No */
+    }
+
+    table th:nth-child(2), table td:nth-child(2) {
+        width: 12%; /* School */
+    }
+
+    table th:nth-child(3), table td:nth-child(3) {
+        width: 10%; /* Date */
+    }
+
+    table th:nth-child(4), table td:nth-child(4) {
+        width: 5%; /* Age */
+    }
+
+    table th:nth-child(5), table td:nth-child(5) {
+        width: 5%; /* Sex */
+    }
+
+    table th:nth-child(6), table td:nth-child(6) {
+        width: 10%; /* Time */
+    }
+
+    table th:nth-child(7), table td:nth-child(7) {
+        width: 10%; /* Elementary */
+    }
+
+    table th:nth-child(8), table td:nth-child(8) {
+        width: 12%; /* Junior Highschool */
+    }
+
+    table th:nth-child(9), table td:nth-child(9) {
+        width: 12%; /* Senior Highschool */
+    }
+
+    table th:nth-child(10), table td:nth-child(10) {
+        width: 10%; /* College */
+    }
+
+    table th:nth-child(11), table td:nth-child(11) {
+        width: 10%; /* Post Grad */
+    }
+
+    table th:nth-child(12), table td:nth-child(12) {
+        width: 9%; /* OSY */
+    }
+
+    /* Avoid page break inside rows */
+    table tr {
+        page-break-inside: avoid;
+    }
+
+    /* Hide any elements that are not needed for printing */
+    .filter-sort-wrapper, .button-container {
+        display: none;
+    }
+
+    /* Increase font size for better readability */
+    body {
+        font-size: 12px;
+        color: #000000; /* Ensure text is black for printing */
+    }
+}
+
+/* Header and filter styles */
+.header {
+    background-color: #1f293a; /* Match header to new background */
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.header__toggle i {
+    color: #ffffff; /* Ensure the toggle icon is also white */
+    font-size: 24px; /* Adjust icon size */
+}
+
+/* Ensure the filter and scroll buttons remain on top */
+.filter-container-wrapper {
+    display: flex;
+    justify-content: space-between; /* Align the filter on the left and buttons on the right */
+    align-items: center;
+    background-color: #1f293a; /* Background color for the container */
+    padding: 10px;
+    position: sticky;
+    top: 0; /* Stay at the top */
+    z-index: 100;
+    width: 100%;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    background-color: #1f293a;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 20px; /* Space between filter and buttons */
+}
+
+.filter-container label {
+    font-size: 16px;
+    color: #1f293a;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.filter-container select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #1f293a;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-container select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+/* Scroll buttons container */
+.scroll-container {
+    display: flex;
+    gap: 10px;
+}
+
+.scroll-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.scroll-button:hover {
+    background-color: #ffffff; /* Change to white background on hover */
+    color: #007bff; /* Change icon color on hover */
+    border: 2px solid #007bff; /* Add a blue border on hover */
+    transform: translateY(-2px); /* Slight movement up */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Add shadow effect */
+}
+
+.scroll-button i {
+    font-size: 20px; /* Icon size */
+    transition: color 0.3s ease; /* Smooth transition for icon color */
+}
+/* Pagination Container */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Pagination Buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #007bff; /* Default background color */
+    color: white; /* Text color */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect for Pagination Buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #0056b3; /* Darker background on hover */
+    color: #ffffff; /* White text */
+}
+
+/* Active Pagination Button */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: #0056b3; /* Active button background color */
+    color: white; /* Active button text color */
+    border: none;
+    font-weight: bold;
+    pointer-events: none;
+    cursor: default;
+}
+
+/* Disabled Pagination Buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+    background-color: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+.header__refresh {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header__refresh i:hover {
+    color: #007bff;
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
+
